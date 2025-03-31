@@ -1,0 +1,3 @@
+pyspark == 3.5.5
+kafka-python == 2.1.4
+pandas == 2.2.3
