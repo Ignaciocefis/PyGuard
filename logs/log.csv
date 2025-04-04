@@ -1,201 +1,201 @@
 timestamp,event_type,user,ip,message
-2025-03-31 19:43:41,ERROR,admin,172.16.0.2,Error crítico en el sistema detectado por el usuario admin
-2025-03-31 19:43:41,INFO,root,185.199.108.153,Evento normal registrado para usuario root desde 185.199.108.153
-2025-03-31 19:43:41,DEBUG,root,203.0.113.45,Modo depuración activo por usuario root
-2025-03-31 19:43:41,WARNING,admin,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,INFO,user2,203.0.113.45,Evento normal registrado para usuario user2 desde 203.0.113.45
-2025-03-31 19:43:41,INFO,user2,172.16.0.2,Evento normal registrado para usuario user2 desde 172.16.0.2
-2025-03-31 19:43:41,WARNING,guest,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,INFO,root,10.0.0.1,Evento normal registrado para usuario root desde 10.0.0.1
-2025-03-31 19:43:41,INFO,user1,172.16.0.2,Evento normal registrado para usuario user1 desde 172.16.0.2
-2025-03-31 19:43:41,DEBUG,guest,192.168.1.10,Modo depuración activo por usuario guest
-2025-03-31 19:43:41,INFO,user2,185.199.108.153,Evento normal registrado para usuario user2 desde 185.199.108.153
-2025-03-31 19:43:41,ERROR,user2,10.0.0.1,Error crítico en el sistema detectado por el usuario user2
-2025-03-31 19:43:41,WARNING,test,192.168.1.10,Posible anomalía detectada desde la IP 192.168.1.10
-2025-03-31 19:43:41,INFO,admin,185.199.108.153,Evento normal registrado para usuario admin desde 185.199.108.153
-2025-03-31 19:43:41,ERROR,user1,203.0.113.45,Error crítico en el sistema detectado por el usuario user1
-2025-03-31 19:43:41,INFO,admin,192.168.1.10,Evento normal registrado para usuario admin desde 192.168.1.10
-2025-03-31 19:43:41,INFO,user1,192.168.1.10,Evento normal registrado para usuario user1 desde 192.168.1.10
-2025-03-31 19:43:41,INFO,root,172.16.0.2,Evento normal registrado para usuario root desde 172.16.0.2
-2025-03-31 19:43:41,WARNING,guest,203.0.113.45,Posible anomalía detectada desde la IP 203.0.113.45
-2025-03-31 19:43:41,INFO,user2,185.199.108.153,Evento normal registrado para usuario user2 desde 185.199.108.153
-2025-03-31 19:43:41,INFO,admin,203.0.113.45,Evento normal registrado para usuario admin desde 203.0.113.45
-2025-03-31 19:43:41,ERROR,admin,172.16.0.2,Error crítico en el sistema detectado por el usuario admin
-2025-03-31 19:43:41,INFO,user2,10.0.0.1,Evento normal registrado para usuario user2 desde 10.0.0.1
-2025-03-31 19:43:41,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
-2025-03-31 19:43:41,ERROR,test,203.0.113.45,Error crítico en el sistema detectado por el usuario test
-2025-03-31 19:43:41,INFO,user2,10.0.0.1,Evento normal registrado para usuario user2 desde 10.0.0.1
-2025-03-31 19:43:41,DEBUG,user2,185.199.108.153,Modo depuración activo por usuario user2
-2025-03-31 19:43:41,INFO,user1,192.168.1.15,Evento normal registrado para usuario user1 desde 192.168.1.15
-2025-03-31 19:43:41,INFO,test,185.199.108.153,Evento normal registrado para usuario test desde 185.199.108.153
-2025-03-31 19:43:41,INFO,admin,203.0.113.45,Evento normal registrado para usuario admin desde 203.0.113.45
-2025-03-31 19:43:41,INFO,test,8.8.8.8,Evento normal registrado para usuario test desde 8.8.8.8
-2025-03-31 19:43:41,WARNING,user2,192.168.1.15,Posible anomalía detectada desde la IP 192.168.1.15
-2025-03-31 19:43:41,INFO,root,192.168.1.10,Evento normal registrado para usuario root desde 192.168.1.10
-2025-03-31 19:43:41,DEBUG,test,172.16.0.2,Modo depuración activo por usuario test
-2025-03-31 19:43:41,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
-2025-03-31 19:43:41,INFO,guest,172.16.0.2,Evento normal registrado para usuario guest desde 172.16.0.2
-2025-03-31 19:43:41,INFO,test,8.8.8.8,Evento normal registrado para usuario test desde 8.8.8.8
-2025-03-31 19:43:41,INFO,user2,172.16.0.2,Evento normal registrado para usuario user2 desde 172.16.0.2
-2025-03-31 19:43:41,INFO,user2,10.0.0.1,Evento normal registrado para usuario user2 desde 10.0.0.1
-2025-03-31 19:43:41,ERROR,root,203.0.113.45,Error crítico en el sistema detectado por el usuario root
-2025-03-31 19:43:41,DEBUG,user1,192.168.1.10,Modo depuración activo por usuario user1
-2025-03-31 19:43:41,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
-2025-03-31 19:43:41,DEBUG,test,192.168.1.10,Modo depuración activo por usuario test
-2025-03-31 19:43:41,INFO,guest,8.8.8.8,Evento normal registrado para usuario guest desde 8.8.8.8
-2025-03-31 19:43:41,INFO,test,203.0.113.45,Evento normal registrado para usuario test desde 203.0.113.45
-2025-03-31 19:43:41,INFO,user1,172.16.0.2,Evento normal registrado para usuario user1 desde 172.16.0.2
-2025-03-31 19:43:41,ERROR,user1,203.0.113.45,Error crítico en el sistema detectado por el usuario user1
-2025-03-31 19:43:41,INFO,user2,192.168.1.15,Evento normal registrado para usuario user2 desde 192.168.1.15
-2025-03-31 19:43:41,WARNING,root,203.0.113.45,Posible anomalía detectada desde la IP 203.0.113.45
-2025-03-31 19:43:41,INFO,user2,203.0.113.45,Evento normal registrado para usuario user2 desde 203.0.113.45
-2025-03-31 19:43:41,ERROR,root,10.0.0.1,Error crítico en el sistema detectado por el usuario root
-2025-03-31 19:43:41,INFO,guest,8.8.8.8,Evento normal registrado para usuario guest desde 8.8.8.8
-2025-03-31 19:43:41,LOGIN_FAILURE,test,192.168.1.10,Intento de acceso fallido para usuario test desde 192.168.1.10
-2025-03-31 19:43:41,INFO,test,10.0.0.1,Evento normal registrado para usuario test desde 10.0.0.1
-2025-03-31 19:43:41,DEBUG,admin,203.0.113.45,Modo depuración activo por usuario admin
-2025-03-31 19:43:41,INFO,admin,10.0.0.1,Evento normal registrado para usuario admin desde 10.0.0.1
-2025-03-31 19:43:41,DEBUG,test,203.0.113.45,Modo depuración activo por usuario test
-2025-03-31 19:43:41,LOGIN_FAILURE,test,8.8.8.8,Intento de acceso fallido para usuario test desde 8.8.8.8
-2025-03-31 19:43:41,INFO,root,192.168.1.15,Evento normal registrado para usuario root desde 192.168.1.15
-2025-03-31 19:43:41,DEBUG,admin,185.199.108.153,Modo depuración activo por usuario admin
-2025-03-31 19:43:41,INFO,root,172.16.0.2,Evento normal registrado para usuario root desde 172.16.0.2
-2025-03-31 19:43:41,WARNING,user1,8.8.8.8,Posible anomalía detectada desde la IP 8.8.8.8
-2025-03-31 19:43:41,INFO,root,192.168.1.10,Evento normal registrado para usuario root desde 192.168.1.10
-2025-03-31 19:43:41,ERROR,user2,203.0.113.45,Error crítico en el sistema detectado por el usuario user2
-2025-03-31 19:43:41,INFO,root,172.16.0.2,Evento normal registrado para usuario root desde 172.16.0.2
-2025-03-31 19:43:41,INFO,guest,192.168.1.10,Evento normal registrado para usuario guest desde 192.168.1.10
-2025-03-31 19:43:41,LOGIN_FAILURE,admin,185.199.108.153,Intento de acceso fallido para usuario admin desde 185.199.108.153
-2025-03-31 19:43:41,DEBUG,test,8.8.8.8,Modo depuración activo por usuario test
-2025-03-31 19:43:41,ERROR,user1,192.168.1.15,Error crítico en el sistema detectado por el usuario user1
-2025-03-31 19:43:41,INFO,user2,10.0.0.1,Evento normal registrado para usuario user2 desde 10.0.0.1
-2025-03-31 19:43:41,DEBUG,test,192.168.1.15,Modo depuración activo por usuario test
-2025-03-31 19:43:41,ERROR,admin,192.168.1.10,Error crítico en el sistema detectado por el usuario admin
-2025-03-31 19:43:41,INFO,root,172.16.0.2,Evento normal registrado para usuario root desde 172.16.0.2
-2025-03-31 19:43:41,INFO,guest,172.16.0.2,Evento normal registrado para usuario guest desde 172.16.0.2
-2025-03-31 19:43:41,WARNING,admin,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,ERROR,user1,10.0.0.1,Error crítico en el sistema detectado por el usuario user1
-2025-03-31 19:43:41,INFO,guest,203.0.113.45,Evento normal registrado para usuario guest desde 203.0.113.45
-2025-03-31 19:43:41,INFO,admin,8.8.8.8,Evento normal registrado para usuario admin desde 8.8.8.8
-2025-03-31 19:43:41,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
-2025-03-31 19:43:41,LOGIN_FAILURE,test,192.168.1.10,Intento de acceso fallido para usuario test desde 192.168.1.10
-2025-03-31 19:43:41,ERROR,guest,203.0.113.45,Error crítico en el sistema detectado por el usuario guest
-2025-03-31 19:43:41,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
-2025-03-31 19:43:41,INFO,user2,192.168.1.15,Evento normal registrado para usuario user2 desde 192.168.1.15
-2025-03-31 19:43:41,WARNING,test,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,WARNING,root,185.199.108.153,Posible anomalía detectada desde la IP 185.199.108.153
-2025-03-31 19:43:41,DEBUG,admin,10.0.0.1,Modo depuración activo por usuario admin
-2025-03-31 19:43:41,INFO,test,172.16.0.2,Evento normal registrado para usuario test desde 172.16.0.2
-2025-03-31 19:43:41,INFO,user1,172.16.0.2,Evento normal registrado para usuario user1 desde 172.16.0.2
-2025-03-31 19:43:41,INFO,user2,8.8.8.8,Evento normal registrado para usuario user2 desde 8.8.8.8
-2025-03-31 19:43:41,INFO,test,10.0.0.1,Evento normal registrado para usuario test desde 10.0.0.1
-2025-03-31 19:43:41,DEBUG,admin,203.0.113.45,Modo depuración activo por usuario admin
-2025-03-31 19:43:41,INFO,admin,8.8.8.8,Evento normal registrado para usuario admin desde 8.8.8.8
-2025-03-31 19:43:41,LOGIN_FAILURE,root,172.16.0.2,Intento de acceso fallido para usuario root desde 172.16.0.2
-2025-03-31 19:43:41,DEBUG,root,172.16.0.2,Modo depuración activo por usuario root
-2025-03-31 19:43:41,INFO,root,10.0.0.1,Evento normal registrado para usuario root desde 10.0.0.1
-2025-03-31 19:43:41,INFO,user2,10.0.0.1,Evento normal registrado para usuario user2 desde 10.0.0.1
-2025-03-31 19:43:41,WARNING,admin,203.0.113.45,Posible anomalía detectada desde la IP 203.0.113.45
-2025-03-31 19:43:41,ERROR,guest,192.168.1.10,Error crítico en el sistema detectado por el usuario guest
-2025-03-31 19:43:41,LOGIN_FAILURE,user1,172.16.0.2,Intento de acceso fallido para usuario user1 desde 172.16.0.2
-2025-03-31 19:43:41,INFO,guest,10.0.0.1,Evento normal registrado para usuario guest desde 10.0.0.1
-2025-03-31 19:43:41,WARNING,guest,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,INFO,admin,10.0.0.1,Evento normal registrado para usuario admin desde 10.0.0.1
-2025-03-31 19:43:41,ERROR,user2,8.8.8.8,Error crítico en el sistema detectado por el usuario user2
-2025-03-31 19:43:41,ERROR,user2,10.0.0.1,Error crítico en el sistema detectado por el usuario user2
-2025-03-31 19:43:41,INFO,admin,192.168.1.15,Evento normal registrado para usuario admin desde 192.168.1.15
-2025-03-31 19:43:41,INFO,user1,185.199.108.153,Evento normal registrado para usuario user1 desde 185.199.108.153
-2025-03-31 19:43:41,ERROR,user2,172.16.0.2,Error crítico en el sistema detectado por el usuario user2
-2025-03-31 19:43:41,INFO,user2,203.0.113.45,Evento normal registrado para usuario user2 desde 203.0.113.45
-2025-03-31 19:43:41,INFO,guest,10.0.0.1,Evento normal registrado para usuario guest desde 10.0.0.1
-2025-03-31 19:43:41,INFO,root,192.168.1.15,Evento normal registrado para usuario root desde 192.168.1.15
-2025-03-31 19:43:41,ERROR,user1,8.8.8.8,Error crítico en el sistema detectado por el usuario user1
-2025-03-31 19:43:41,DEBUG,user2,185.199.108.153,Modo depuración activo por usuario user2
-2025-03-31 19:43:41,ERROR,root,185.199.108.153,Error crítico en el sistema detectado por el usuario root
-2025-03-31 19:43:41,DEBUG,root,185.199.108.153,Modo depuración activo por usuario root
-2025-03-31 19:43:41,WARNING,user1,10.0.0.1,Posible anomalía detectada desde la IP 10.0.0.1
-2025-03-31 19:43:41,WARNING,root,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,WARNING,test,185.199.108.153,Posible anomalía detectada desde la IP 185.199.108.153
-2025-03-31 19:43:41,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
-2025-03-31 19:43:41,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
-2025-03-31 19:43:41,INFO,guest,185.199.108.153,Evento normal registrado para usuario guest desde 185.199.108.153
-2025-03-31 19:43:41,DEBUG,test,8.8.8.8,Modo depuración activo por usuario test
-2025-03-31 19:43:41,WARNING,user2,192.168.1.15,Posible anomalía detectada desde la IP 192.168.1.15
-2025-03-31 19:43:41,DEBUG,user1,192.168.1.15,Modo depuración activo por usuario user1
-2025-03-31 19:43:41,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
-2025-03-31 19:43:41,ERROR,user2,203.0.113.45,Error crítico en el sistema detectado por el usuario user2
-2025-03-31 19:43:41,INFO,admin,203.0.113.45,Evento normal registrado para usuario admin desde 203.0.113.45
-2025-03-31 19:43:41,WARNING,root,192.168.1.10,Posible anomalía detectada desde la IP 192.168.1.10
-2025-03-31 19:43:41,INFO,test,8.8.8.8,Evento normal registrado para usuario test desde 8.8.8.8
-2025-03-31 19:43:41,DEBUG,user2,192.168.1.10,Modo depuración activo por usuario user2
-2025-03-31 19:43:41,INFO,user1,10.0.0.1,Evento normal registrado para usuario user1 desde 10.0.0.1
-2025-03-31 19:43:41,INFO,root,172.16.0.2,Evento normal registrado para usuario root desde 172.16.0.2
-2025-03-31 19:43:41,ERROR,admin,185.199.108.153,Error crítico en el sistema detectado por el usuario admin
-2025-03-31 19:43:41,ERROR,root,172.16.0.2,Error crítico en el sistema detectado por el usuario root
-2025-03-31 19:43:41,INFO,root,10.0.0.1,Evento normal registrado para usuario root desde 10.0.0.1
-2025-03-31 19:43:41,WARNING,test,203.0.113.45,Posible anomalía detectada desde la IP 203.0.113.45
-2025-03-31 19:43:41,ERROR,guest,192.168.1.15,Error crítico en el sistema detectado por el usuario guest
-2025-03-31 19:43:41,DEBUG,user1,192.168.1.10,Modo depuración activo por usuario user1
-2025-03-31 19:43:41,INFO,test,192.168.1.15,Evento normal registrado para usuario test desde 192.168.1.15
-2025-03-31 19:43:41,WARNING,admin,185.199.108.153,Posible anomalía detectada desde la IP 185.199.108.153
-2025-03-31 19:43:41,DEBUG,user1,192.168.1.10,Modo depuración activo por usuario user1
-2025-03-31 19:43:41,INFO,user1,10.0.0.1,Evento normal registrado para usuario user1 desde 10.0.0.1
-2025-03-31 19:43:41,INFO,user1,10.0.0.1,Evento normal registrado para usuario user1 desde 10.0.0.1
-2025-03-31 19:43:41,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
-2025-03-31 19:43:41,DEBUG,user2,172.16.0.2,Modo depuración activo por usuario user2
-2025-03-31 19:43:41,INFO,user2,192.168.1.15,Evento normal registrado para usuario user2 desde 192.168.1.15
-2025-03-31 19:43:41,WARNING,guest,8.8.8.8,Posible anomalía detectada desde la IP 8.8.8.8
-2025-03-31 19:43:41,INFO,user1,185.199.108.153,Evento normal registrado para usuario user1 desde 185.199.108.153
-2025-03-31 19:43:41,WARNING,root,185.199.108.153,Posible anomalía detectada desde la IP 185.199.108.153
-2025-03-31 19:43:41,WARNING,guest,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
-2025-03-31 19:43:41,INFO,admin,203.0.113.45,Evento normal registrado para usuario admin desde 203.0.113.45
-2025-03-31 19:43:41,INFO,user2,172.16.0.2,Evento normal registrado para usuario user2 desde 172.16.0.2
-2025-03-31 19:43:41,INFO,user2,192.168.1.15,Evento normal registrado para usuario user2 desde 192.168.1.15
-2025-03-31 19:43:41,ERROR,test,10.0.0.1,Error crítico en el sistema detectado por el usuario test
-2025-03-31 19:43:41,INFO,user2,203.0.113.45,Evento normal registrado para usuario user2 desde 203.0.113.45
-2025-03-31 19:43:41,INFO,guest,192.168.1.15,Evento normal registrado para usuario guest desde 192.168.1.15
-2025-03-31 19:43:41,INFO,root,192.168.1.10,Evento normal registrado para usuario root desde 192.168.1.10
-2025-03-31 19:43:41,INFO,user1,8.8.8.8,Evento normal registrado para usuario user1 desde 8.8.8.8
-2025-03-31 19:43:41,INFO,guest,185.199.108.153,Evento normal registrado para usuario guest desde 185.199.108.153
-2025-03-31 19:43:41,INFO,test,185.199.108.153,Evento normal registrado para usuario test desde 185.199.108.153
-2025-03-31 19:43:41,INFO,user1,185.199.108.153,Evento normal registrado para usuario user1 desde 185.199.108.153
-2025-03-31 19:43:41,DEBUG,user1,10.0.0.1,Modo depuración activo por usuario user1
-2025-03-31 19:43:41,WARNING,admin,192.168.1.15,Posible anomalía detectada desde la IP 192.168.1.15
-2025-03-31 19:43:41,DEBUG,test,8.8.8.8,Modo depuración activo por usuario test
-2025-03-31 19:43:41,INFO,guest,192.168.1.10,Evento normal registrado para usuario guest desde 192.168.1.10
-2025-03-31 19:43:41,INFO,guest,192.168.1.10,Evento normal registrado para usuario guest desde 192.168.1.10
-2025-03-31 19:43:41,INFO,root,10.0.0.1,Evento normal registrado para usuario root desde 10.0.0.1
-2025-03-31 19:43:41,INFO,root,192.168.1.15,Evento normal registrado para usuario root desde 192.168.1.15
-2025-03-31 19:43:41,INFO,guest,10.0.0.1,Evento normal registrado para usuario guest desde 10.0.0.1
-2025-03-31 19:43:41,INFO,admin,203.0.113.45,Evento normal registrado para usuario admin desde 203.0.113.45
-2025-03-31 19:43:41,ERROR,test,192.168.1.10,Error crítico en el sistema detectado por el usuario test
-2025-03-31 19:43:41,INFO,user2,10.0.0.1,Evento normal registrado para usuario user2 desde 10.0.0.1
-2025-03-31 19:43:41,DEBUG,user2,8.8.8.8,Modo depuración activo por usuario user2
-2025-03-31 19:43:41,INFO,test,192.168.1.15,Evento normal registrado para usuario test desde 192.168.1.15
-2025-03-31 19:43:41,INFO,guest,10.0.0.1,Evento normal registrado para usuario guest desde 10.0.0.1
-2025-03-31 19:43:41,INFO,user2,192.168.1.15,Evento normal registrado para usuario user2 desde 192.168.1.15
-2025-03-31 19:43:41,INFO,root,172.16.0.2,Evento normal registrado para usuario root desde 172.16.0.2
-2025-03-31 19:43:41,LOGIN_FAILURE,admin,185.199.108.153,Intento de acceso fallido para usuario admin desde 185.199.108.153
-2025-03-31 19:43:41,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
-2025-03-31 19:43:41,ERROR,user2,192.168.1.10,Error crítico en el sistema detectado por el usuario user2
-2025-03-31 19:43:41,ERROR,user2,192.168.1.10,Error crítico en el sistema detectado por el usuario user2
-2025-03-31 19:43:41,DEBUG,root,185.199.108.153,Modo depuración activo por usuario root
-2025-03-31 19:43:41,WARNING,guest,8.8.8.8,Posible anomalía detectada desde la IP 8.8.8.8
-2025-03-31 19:43:41,DEBUG,test,8.8.8.8,Modo depuración activo por usuario test
-2025-03-31 19:43:41,INFO,test,203.0.113.45,Evento normal registrado para usuario test desde 203.0.113.45
-2025-03-31 19:43:41,LOGIN_FAILURE,guest,192.168.1.10,Intento de acceso fallido para usuario guest desde 192.168.1.10
-2025-03-31 19:43:41,INFO,user1,10.0.0.1,Evento normal registrado para usuario user1 desde 10.0.0.1
-2025-03-31 19:43:41,INFO,admin,8.8.8.8,Evento normal registrado para usuario admin desde 8.8.8.8
-2025-03-31 19:43:41,WARNING,admin,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,INFO,guest,185.199.108.153,Evento normal registrado para usuario guest desde 185.199.108.153
-2025-03-31 19:43:41,INFO,root,185.199.108.153,Evento normal registrado para usuario root desde 185.199.108.153
-2025-03-31 19:43:41,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
-2025-03-31 19:43:41,WARNING,user2,185.199.108.153,Posible anomalía detectada desde la IP 185.199.108.153
-2025-03-31 19:43:41,INFO,admin,185.199.108.153,Evento normal registrado para usuario admin desde 185.199.108.153
-2025-03-31 19:43:41,WARNING,user2,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,INFO,user1,10.0.0.1,Evento normal registrado para usuario user1 desde 10.0.0.1
-2025-03-31 19:43:41,DEBUG,test,192.168.1.10,Modo depuración activo por usuario test
-2025-03-31 19:43:41,WARNING,root,172.16.0.2,Posible anomalía detectada desde la IP 172.16.0.2
-2025-03-31 19:43:41,INFO,user1,8.8.8.8,Evento normal registrado para usuario user1 desde 8.8.8.8
-2025-03-31 19:43:41,LOGIN_FAILURE,user2,192.168.1.10,Intento de acceso fallido para usuario user2 desde 192.168.1.10
+2025-04-02 18:50:45,WARNING,guest,192.168.1.10,Posible anomalia detectada desde la IP 192.168.1.10
+2025-04-02 18:50:45,WARNING,admin,185.199.108.153,Posible anomalia detectada desde la IP 185.199.108.153
+2025-04-02 18:50:45,ERROR,admin,8.8.8.8,Error critico en el sistema detectado por el usuario admin
+2025-04-02 18:50:45,INFO,guest,192.168.1.10,Evento normal registrado para usuario guest desde 192.168.1.10
+2025-04-02 18:50:45,WARNING,admin,185.199.108.153,Posible anomalia detectada desde la IP 185.199.108.153
+2025-04-02 18:50:45,DEBUG,user1,10.0.0.1,Modo depuraciin activo por usuario user1
+2025-04-02 18:50:45,INFO,user1,8.8.8.8,Evento normal registrado para usuario user1 desde 8.8.8.8
+2025-04-02 18:50:45,WARNING,user1,203.0.113.45,Posible anomalia detectada desde la IP 203.0.113.45
+2025-04-02 18:50:45,INFO,user1,10.0.0.1,Evento normal registrado para usuario user1 desde 10.0.0.1
+2025-04-02 18:50:45,WARNING,user2,192.168.1.10,Posible anomalia detectada desde la IP 192.168.1.10
+2025-04-02 18:50:45,ERROR,guest,185.199.108.153,Error critico en el sistema detectado por el usuario guest
+2025-04-02 18:50:45,DEBUG,admin,203.0.113.45,Modo depuraciin activo por usuario admin
+2025-04-02 18:50:45,INFO,user1,172.16.0.2,Evento normal registrado para usuario user1 desde 172.16.0.2
+2025-04-02 18:50:45,INFO,user1,10.0.0.1,Evento normal registrado para usuario user1 desde 10.0.0.1
+2025-04-02 18:50:45,INFO,root,192.168.1.15,Evento normal registrado para usuario root desde 192.168.1.15
+2025-04-02 18:50:45,INFO,user2,10.0.0.1,Evento normal registrado para usuario user2 desde 10.0.0.1
+2025-04-02 18:50:45,INFO,root,185.199.108.153,Evento normal registrado para usuario root desde 185.199.108.153
+2025-04-02 18:50:45,WARNING,user1,8.8.8.8,Posible anomalia detectada desde la IP 8.8.8.8
+2025-04-02 18:50:45,INFO,user2,185.199.108.153,Evento normal registrado para usuario user2 desde 185.199.108.153
+2025-04-02 18:50:45,INFO,guest,10.0.0.1,Evento normal registrado para usuario guest desde 10.0.0.1
+2025-04-02 18:50:45,INFO,guest,192.168.1.15,Evento normal registrado para usuario guest desde 192.168.1.15
+2025-04-02 18:50:45,ERROR,test,192.168.1.15,Error critico en el sistema detectado por el usuario test
+2025-04-02 18:50:45,WARNING,test,172.16.0.2,Posible anomalia detectada desde la IP 172.16.0.2
+2025-04-02 18:50:45,INFO,root,8.8.8.8,Evento normal registrado para usuario root desde 8.8.8.8
+2025-04-02 18:50:45,ERROR,guest,10.0.0.1,Error critico en el sistema detectado por el usuario guest
+2025-04-02 18:50:45,INFO,user1,192.168.1.15,Evento normal registrado para usuario user1 desde 192.168.1.15
+2025-04-02 18:50:45,INFO,test,8.8.8.8,Evento normal registrado para usuario test desde 8.8.8.8
+2025-04-02 18:50:45,INFO,test,8.8.8.8,Evento normal registrado para usuario test desde 8.8.8.8
+2025-04-02 18:50:45,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
+2025-04-02 18:50:45,LOGIN_FAILURE,user2,203.0.113.45,Intento de acceso fallido para usuario user2 desde 203.0.113.45
+2025-04-02 18:50:45,WARNING,root,172.16.0.2,Posible anomalia detectada desde la IP 172.16.0.2
+2025-04-02 18:50:45,INFO,user2,185.199.108.153,Evento normal registrado para usuario user2 desde 185.199.108.153
+2025-04-02 18:50:45,INFO,root,172.16.0.2,Evento normal registrado para usuario root desde 172.16.0.2
+2025-04-02 18:50:45,INFO,guest,8.8.8.8,Evento normal registrado para usuario guest desde 8.8.8.8
+2025-04-02 18:50:45,WARNING,user1,10.0.0.1,Posible anomalia detectada desde la IP 10.0.0.1
+2025-04-02 18:50:45,ERROR,guest,172.16.0.2,Error critico en el sistema detectado por el usuario guest
+2025-04-02 18:50:45,INFO,guest,10.0.0.1,Evento normal registrado para usuario guest desde 10.0.0.1
+2025-04-02 18:50:45,WARNING,guest,192.168.1.10,Posible anomalia detectada desde la IP 192.168.1.10
+2025-04-02 18:50:45,ERROR,guest,192.168.1.15,Error critico en el sistema detectado por el usuario guest
+2025-04-02 18:50:45,INFO,user2,10.0.0.1,Evento normal registrado para usuario user2 desde 10.0.0.1
+2025-04-02 18:50:45,DEBUG,user2,8.8.8.8,Modo depuraciin activo por usuario user2
+2025-04-02 18:50:45,INFO,guest,203.0.113.45,Evento normal registrado para usuario guest desde 203.0.113.45
+2025-04-02 18:50:45,INFO,admin,10.0.0.1,Evento normal registrado para usuario admin desde 10.0.0.1
+2025-04-02 18:50:45,INFO,guest,192.168.1.15,Evento normal registrado para usuario guest desde 192.168.1.15
+2025-04-02 18:50:45,INFO,test,192.168.1.10,Evento normal registrado para usuario test desde 192.168.1.10
+2025-04-02 18:50:45,INFO,user2,172.16.0.2,Evento normal registrado para usuario user2 desde 172.16.0.2
+2025-04-02 18:50:45,INFO,user2,172.16.0.2,Evento normal registrado para usuario user2 desde 172.16.0.2
+2025-04-02 18:50:45,ERROR,admin,172.16.0.2,Error critico en el sistema detectado por el usuario admin
+2025-04-02 18:50:45,INFO,root,172.16.0.2,Evento normal registrado para usuario root desde 172.16.0.2
+2025-04-02 18:50:45,INFO,root,185.199.108.153,Evento normal registrado para usuario root desde 185.199.108.153
+2025-04-02 18:50:45,INFO,test,185.199.108.153,Evento normal registrado para usuario test desde 185.199.108.153
+2025-04-02 18:50:45,INFO,guest,192.168.1.15,Evento normal registrado para usuario guest desde 192.168.1.15
+2025-04-02 18:50:45,INFO,root,192.168.1.10,Evento normal registrado para usuario root desde 192.168.1.10
+2025-04-02 18:50:45,LOGIN_FAILURE,guest,203.0.113.45,Intento de acceso fallido para usuario guest desde 203.0.113.45
+2025-04-02 18:50:45,INFO,admin,8.8.8.8,Evento normal registrado para usuario admin desde 8.8.8.8
+2025-04-02 18:50:45,DEBUG,guest,192.168.1.15,Modo depuraciin activo por usuario guest
+2025-04-02 18:50:45,INFO,root,192.168.1.15,Evento normal registrado para usuario root desde 192.168.1.15
+2025-04-02 18:50:45,INFO,root,192.168.1.15,Evento normal registrado para usuario root desde 192.168.1.15
+2025-04-02 18:50:45,DEBUG,root,8.8.8.8,Modo depuraciin activo por usuario root
+2025-04-02 18:50:45,INFO,user2,185.199.108.153,Evento normal registrado para usuario user2 desde 185.199.108.153
+2025-04-02 18:50:45,INFO,guest,185.199.108.153,Evento normal registrado para usuario guest desde 185.199.108.153
+2025-04-02 18:50:45,INFO,root,10.0.0.1,Evento normal registrado para usuario root desde 10.0.0.1
+2025-04-02 18:50:45,WARNING,user2,192.168.1.10,Posible anomalia detectada desde la IP 192.168.1.10
+2025-04-02 18:50:45,LOGIN_FAILURE,root,203.0.113.45,Intento de acceso fallido para usuario root desde 203.0.113.45
+2025-04-02 18:50:45,WARNING,admin,192.168.1.15,Posible anomalia detectada desde la IP 192.168.1.15
+2025-04-02 18:50:45,ERROR,guest,192.168.1.10,Error critico en el sistema detectado por el usuario guest
+2025-04-02 18:50:45,WARNING,user1,172.16.0.2,Posible anomalia detectada desde la IP 172.16.0.2
+2025-04-02 18:50:45,INFO,user2,172.16.0.2,Evento normal registrado para usuario user2 desde 172.16.0.2
+2025-04-02 18:50:45,WARNING,user2,185.199.108.153,Posible anomalia detectada desde la IP 185.199.108.153
+2025-04-02 18:50:45,DEBUG,admin,172.16.0.2,Modo depuraciin activo por usuario admin
+2025-04-02 18:50:45,INFO,user2,8.8.8.8,Evento normal registrado para usuario user2 desde 8.8.8.8
+2025-04-02 18:50:45,ERROR,user1,185.199.108.153,Error critico en el sistema detectado por el usuario user1
+2025-04-02 18:50:45,INFO,root,192.168.1.15,Evento normal registrado para usuario root desde 192.168.1.15
+2025-04-02 18:50:45,DEBUG,test,192.168.1.15,Modo depuraciin activo por usuario test
+2025-04-02 18:50:45,LOGIN_FAILURE,guest,172.16.0.2,Intento de acceso fallido para usuario guest desde 172.16.0.2
+2025-04-02 18:50:45,INFO,guest,185.199.108.153,Evento normal registrado para usuario guest desde 185.199.108.153
+2025-04-02 18:50:45,WARNING,user1,192.168.1.10,Posible anomalia detectada desde la IP 192.168.1.10
+2025-04-02 18:50:45,INFO,guest,172.16.0.2,Evento normal registrado para usuario guest desde 172.16.0.2
+2025-04-02 18:50:45,DEBUG,root,192.168.1.15,Modo depuraciin activo por usuario root
+2025-04-02 18:50:45,DEBUG,root,192.168.1.10,Modo depuraciin activo por usuario root
+2025-04-02 18:50:45,WARNING,user2,192.168.1.15,Posible anomalia detectada desde la IP 192.168.1.15
+2025-04-02 18:50:45,INFO,test,172.16.0.2,Evento normal registrado para usuario test desde 172.16.0.2
+2025-04-02 18:50:45,LOGIN_FAILURE,user2,185.199.108.153,Intento de acceso fallido para usuario user2 desde 185.199.108.153
+2025-04-02 18:50:45,INFO,guest,185.199.108.153,Evento normal registrado para usuario guest desde 185.199.108.153
+2025-04-02 18:50:45,ERROR,user1,172.16.0.2,Error critico en el sistema detectado por el usuario user1
+2025-04-02 18:50:45,INFO,user1,10.0.0.1,Evento normal registrado para usuario user1 desde 10.0.0.1
+2025-04-02 18:50:45,INFO,test,203.0.113.45,Evento normal registrado para usuario test desde 203.0.113.45
+2025-04-02 18:50:45,INFO,test,203.0.113.45,Evento normal registrado para usuario test desde 203.0.113.45
+2025-04-02 18:50:45,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
+2025-04-02 18:50:45,DEBUG,root,203.0.113.45,Modo depuraciin activo por usuario root
+2025-04-02 18:50:45,LOGIN_FAILURE,user2,192.168.1.15,Intento de acceso fallido para usuario user2 desde 192.168.1.15
+2025-04-02 18:50:45,INFO,guest,203.0.113.45,Evento normal registrado para usuario guest desde 203.0.113.45
+2025-04-02 18:50:45,ERROR,root,10.0.0.1,Error critico en el sistema detectado por el usuario root
+2025-04-02 18:50:45,INFO,user1,10.0.0.1,Evento normal registrado para usuario user1 desde 10.0.0.1
+2025-04-02 18:50:45,INFO,user1,8.8.8.8,Evento normal registrado para usuario user1 desde 8.8.8.8
+2025-04-02 18:50:45,INFO,admin,192.168.1.15,Evento normal registrado para usuario admin desde 192.168.1.15
+2025-04-02 18:50:45,INFO,guest,192.168.1.15,Evento normal registrado para usuario guest desde 192.168.1.15
+2025-04-02 18:50:45,INFO,user1,192.168.1.15,Evento normal registrado para usuario user1 desde 192.168.1.15
+2025-04-02 18:50:45,INFO,guest,10.0.0.1,Evento normal registrado para usuario guest desde 10.0.0.1
+2025-04-02 18:50:45,INFO,user2,185.199.108.153,Evento normal registrado para usuario user2 desde 185.199.108.153
+2025-04-02 18:50:45,DEBUG,test,203.0.113.45,Modo depuraciin activo por usuario test
+2025-04-02 18:50:45,ERROR,admin,192.168.1.10,Error critico en el sistema detectado por el usuario admin
+2025-04-02 18:50:45,WARNING,admin,192.168.1.15,Posible anomalia detectada desde la IP 192.168.1.15
+2025-04-02 18:50:45,LOGIN_FAILURE,user2,172.16.0.2,Intento de acceso fallido para usuario user2 desde 172.16.0.2
+2025-04-02 18:50:45,INFO,guest,192.168.1.15,Evento normal registrado para usuario guest desde 192.168.1.15
+2025-04-02 18:50:45,INFO,user1,8.8.8.8,Evento normal registrado para usuario user1 desde 8.8.8.8
+2025-04-02 18:50:45,INFO,user2,192.168.1.10,Evento normal registrado para usuario user2 desde 192.168.1.10
+2025-04-02 18:50:45,ERROR,user1,192.168.1.15,Error critico en el sistema detectado por el usuario user1
+2025-04-02 18:50:45,LOGIN_FAILURE,user1,10.0.0.1,Intento de acceso fallido para usuario user1 desde 10.0.0.1
+2025-04-02 18:50:45,WARNING,user1,10.0.0.1,Posible anomalia detectada desde la IP 10.0.0.1
+2025-04-02 18:50:45,INFO,admin,185.199.108.153,Evento normal registrado para usuario admin desde 185.199.108.153
+2025-04-02 18:50:45,INFO,user1,8.8.8.8,Evento normal registrado para usuario user1 desde 8.8.8.8
+2025-04-02 18:50:45,INFO,root,185.199.108.153,Evento normal registrado para usuario root desde 185.199.108.153
+2025-04-02 18:50:45,ERROR,user1,8.8.8.8,Error critico en el sistema detectado por el usuario user1
+2025-04-02 18:50:45,INFO,guest,192.168.1.15,Evento normal registrado para usuario guest desde 192.168.1.15
+2025-04-02 18:50:45,INFO,guest,203.0.113.45,Evento normal registrado para usuario guest desde 203.0.113.45
+2025-04-02 18:50:45,INFO,test,8.8.8.8,Evento normal registrado para usuario test desde 8.8.8.8
+2025-04-02 18:50:45,WARNING,user2,10.0.0.1,Posible anomalia detectada desde la IP 10.0.0.1
+2025-04-02 18:50:45,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
+2025-04-02 18:50:45,DEBUG,test,192.168.1.10,Modo depuraciin activo por usuario test
+2025-04-02 18:50:45,INFO,admin,185.199.108.153,Evento normal registrado para usuario admin desde 185.199.108.153
+2025-04-02 18:50:45,INFO,admin,172.16.0.2,Evento normal registrado para usuario admin desde 172.16.0.2
+2025-04-02 18:50:45,INFO,user2,203.0.113.45,Evento normal registrado para usuario user2 desde 203.0.113.45
+2025-04-02 18:50:45,INFO,user2,172.16.0.2,Evento normal registrado para usuario user2 desde 172.16.0.2
+2025-04-02 18:50:45,INFO,admin,192.168.1.10,Evento normal registrado para usuario admin desde 192.168.1.10
+2025-04-02 18:50:45,LOGIN_FAILURE,admin,172.16.0.2,Intento de acceso fallido para usuario admin desde 172.16.0.2
+2025-04-02 18:50:45,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
+2025-04-02 18:50:45,INFO,guest,172.16.0.2,Evento normal registrado para usuario guest desde 172.16.0.2
+2025-04-02 18:50:45,ERROR,admin,172.16.0.2,Error critico en el sistema detectado por el usuario admin
+2025-04-02 18:50:45,INFO,user1,203.0.113.45,Evento normal registrado para usuario user1 desde 203.0.113.45
+2025-04-02 18:50:45,WARNING,root,10.0.0.1,Posible anomalia detectada desde la IP 10.0.0.1
+2025-04-02 18:50:45,INFO,admin,192.168.1.10,Evento normal registrado para usuario admin desde 192.168.1.10
+2025-04-02 18:50:45,INFO,admin,185.199.108.153,Evento normal registrado para usuario admin desde 185.199.108.153
+2025-04-02 18:50:45,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
+2025-04-02 18:50:45,INFO,user2,185.199.108.153,Evento normal registrado para usuario user2 desde 185.199.108.153
+2025-04-02 18:50:45,DEBUG,root,192.168.1.10,Modo depuraciin activo por usuario root
+2025-04-02 18:50:45,LOGIN_FAILURE,admin,10.0.0.1,Intento de acceso fallido para usuario admin desde 10.0.0.1
+2025-04-02 18:50:45,INFO,user2,203.0.113.45,Evento normal registrado para usuario user2 desde 203.0.113.45
+2025-04-02 18:50:45,DEBUG,test,192.168.1.10,Modo depuraciin activo por usuario test
+2025-04-02 18:50:45,INFO,user1,8.8.8.8,Evento normal registrado para usuario user1 desde 8.8.8.8
+2025-04-02 18:50:45,INFO,guest,172.16.0.2,Evento normal registrado para usuario guest desde 172.16.0.2
+2025-04-02 18:50:45,INFO,guest,203.0.113.45,Evento normal registrado para usuario guest desde 203.0.113.45
+2025-04-02 18:50:45,WARNING,guest,172.16.0.2,Posible anomalia detectada desde la IP 172.16.0.2
+2025-04-02 18:50:45,ERROR,root,8.8.8.8,Error critico en el sistema detectado por el usuario root
+2025-04-02 18:50:45,INFO,admin,192.168.1.10,Evento normal registrado para usuario admin desde 192.168.1.10
+2025-04-02 18:50:45,DEBUG,admin,10.0.0.1,Modo depuraciin activo por usuario admin
+2025-04-02 18:50:45,INFO,guest,8.8.8.8,Evento normal registrado para usuario guest desde 8.8.8.8
+2025-04-02 18:50:45,DEBUG,admin,10.0.0.1,Modo depuraciin activo por usuario admin
+2025-04-02 18:50:45,INFO,root,8.8.8.8,Evento normal registrado para usuario root desde 8.8.8.8
+2025-04-02 18:50:45,WARNING,user1,8.8.8.8,Posible anomalia detectada desde la IP 8.8.8.8
+2025-04-02 18:50:45,LOGIN_FAILURE,admin,10.0.0.1,Intento de acceso fallido para usuario admin desde 10.0.0.1
+2025-04-02 18:50:45,INFO,root,8.8.8.8,Evento normal registrado para usuario root desde 8.8.8.8
+2025-04-02 18:50:45,WARNING,user2,192.168.1.15,Posible anomalia detectada desde la IP 192.168.1.15
+2025-04-02 18:50:45,WARNING,root,185.199.108.153,Posible anomalia detectada desde la IP 185.199.108.153
+2025-04-02 18:50:45,INFO,guest,203.0.113.45,Evento normal registrado para usuario guest desde 203.0.113.45
+2025-04-02 18:50:45,DEBUG,admin,8.8.8.8,Modo depuraciin activo por usuario admin
+2025-04-02 18:50:45,DEBUG,root,172.16.0.2,Modo depuraciin activo por usuario root
+2025-04-02 18:50:45,INFO,root,185.199.108.153,Evento normal registrado para usuario root desde 185.199.108.153
+2025-04-02 18:50:45,ERROR,admin,185.199.108.153,Error critico en el sistema detectado por el usuario admin
+2025-04-02 18:50:45,INFO,test,192.168.1.15,Evento normal registrado para usuario test desde 192.168.1.15
+2025-04-02 18:50:45,INFO,test,172.16.0.2,Evento normal registrado para usuario test desde 172.16.0.2
+2025-04-02 18:50:45,INFO,guest,172.16.0.2,Evento normal registrado para usuario guest desde 172.16.0.2
+2025-04-02 18:50:45,DEBUG,test,203.0.113.45,Modo depuraciin activo por usuario test
+2025-04-02 18:50:45,INFO,user1,172.16.0.2,Evento normal registrado para usuario user1 desde 172.16.0.2
+2025-04-02 18:50:45,INFO,guest,172.16.0.2,Evento normal registrado para usuario guest desde 172.16.0.2
+2025-04-02 18:50:45,INFO,user1,192.168.1.10,Evento normal registrado para usuario user1 desde 192.168.1.10
+2025-04-02 18:50:45,WARNING,user2,203.0.113.45,Posible anomalia detectada desde la IP 203.0.113.45
+2025-04-02 18:50:45,WARNING,guest,203.0.113.45,Posible anomalia detectada desde la IP 203.0.113.45
+2025-04-02 18:50:45,ERROR,user2,192.168.1.10,Error critico en el sistema detectado por el usuario user2
+2025-04-02 18:50:45,LOGIN_FAILURE,user2,192.168.1.10,Intento de acceso fallido para usuario user2 desde 192.168.1.10
+2025-04-02 18:50:45,ERROR,test,203.0.113.45,Error critico en el sistema detectado por el usuario test
+2025-04-02 18:50:45,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
+2025-04-02 18:50:45,INFO,user1,172.16.0.2,Evento normal registrado para usuario user1 desde 172.16.0.2
+2025-04-02 18:50:45,DEBUG,guest,172.16.0.2,Modo depuraciin activo por usuario guest
+2025-04-02 18:50:45,INFO,guest,185.199.108.153,Evento normal registrado para usuario guest desde 185.199.108.153
+2025-04-02 18:50:45,INFO,user2,172.16.0.2,Evento normal registrado para usuario user2 desde 172.16.0.2
+2025-04-02 18:50:45,WARNING,root,10.0.0.1,Posible anomalia detectada desde la IP 10.0.0.1
+2025-04-02 18:50:45,INFO,admin,203.0.113.45,Evento normal registrado para usuario admin desde 203.0.113.45
+2025-04-02 18:50:45,INFO,guest,192.168.1.15,Evento normal registrado para usuario guest desde 192.168.1.15
+2025-04-02 18:50:45,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
+2025-04-02 18:50:45,INFO,guest,203.0.113.45,Evento normal registrado para usuario guest desde 203.0.113.45
+2025-04-02 18:50:45,INFO,user1,192.168.1.15,Evento normal registrado para usuario user1 desde 192.168.1.15
+2025-04-02 18:50:45,WARNING,root,10.0.0.1,Posible anomalia detectada desde la IP 10.0.0.1
+2025-04-02 18:50:45,LOGIN_FAILURE,user1,192.168.1.15,Intento de acceso fallido para usuario user1 desde 192.168.1.15
+2025-04-02 18:50:45,ERROR,user1,192.168.1.10,Error critico en el sistema detectado por el usuario user1
+2025-04-02 18:50:45,WARNING,admin,172.16.0.2,Posible anomalia detectada desde la IP 172.16.0.2
+2025-04-02 18:50:45,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
+2025-04-02 18:50:45,DEBUG,user2,172.16.0.2,Modo depuraciin activo por usuario user2
+2025-04-02 18:50:45,LOGIN_FAILURE,root,192.168.1.15,Intento de acceso fallido para usuario root desde 192.168.1.15
+2025-04-02 18:50:45,ERROR,root,185.199.108.153,Error critico en el sistema detectado por el usuario root
+2025-04-02 18:50:45,ERROR,guest,8.8.8.8,Error critico en el sistema detectado por el usuario guest
+2025-04-02 18:50:45,INFO,admin,192.168.1.15,Evento normal registrado para usuario admin desde 192.168.1.15
+2025-04-02 18:50:45,DEBUG,user1,10.0.0.1,Modo depuraciin activo por usuario user1
+2025-04-02 18:50:45,INFO,root,172.16.0.2,Evento normal registrado para usuario root desde 172.16.0.2
+2025-04-02 18:50:45,INFO,admin,203.0.113.45,Evento normal registrado para usuario admin desde 203.0.113.45
+2025-04-02 18:50:45,INFO,root,185.199.108.153,Evento normal registrado para usuario root desde 185.199.108.153
+2025-04-02 18:50:45,INFO,root,192.168.1.15,Evento normal registrado para usuario root desde 192.168.1.15
+2025-04-02 18:50:45,WARNING,user1,192.168.1.15,Posible anomalia detectada desde la IP 192.168.1.15
+2025-04-02 18:50:45,INFO,user1,185.199.108.153,Evento normal registrado para usuario user1 desde 185.199.108.153
+2025-04-02 18:50:45,INFO,root,203.0.113.45,Evento normal registrado para usuario root desde 203.0.113.45
