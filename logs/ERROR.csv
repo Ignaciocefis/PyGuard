@@ -1,0 +1,6 @@
+timestamp,event_type,user,ip,message
+2025-04-06 17:07:52,ERROR,user2,10.0.0.1,Error critico en el sistema detectado por el usuario user2
+2025-04-06 17:07:57,ERROR,user1,185.199.108.153,Error critico en el sistema detectado por el usuario user1
+2025-04-06 17:08:07,ERROR,guest,203.0.113.45,Error critico en el sistema detectado por el usuario guest
+2025-04-06 17:08:13,ERROR,user2,8.8.8.8,Error critico en el sistema detectado por el usuario user2
+2025-04-06 17:08:40,ERROR,guest,8.8.8.8,Error critico en el sistema detectado por el usuario guest

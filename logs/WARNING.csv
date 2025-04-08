@@ -1,0 +1,7 @@
+timestamp,event_type,user,ip,message
+2025-04-06 17:07:59,WARNING,test,192.168.1.15,Posible anomalia detectada desde la IP 192.168.1.15
+2025-04-06 17:08:01,WARNING,test,8.8.8.8,Posible anomalia detectada desde la IP 8.8.8.8
+2025-04-06 17:08:05,WARNING,admin,172.16.0.2,Posible anomalia detectada desde la IP 172.16.0.2
+2025-04-06 17:08:08,WARNING,user2,172.16.0.2,Posible anomalia detectada desde la IP 172.16.0.2
+2025-04-06 17:08:39,WARNING,root,8.8.8.8,Posible anomalia detectada desde la IP 8.8.8.8
+2025-04-06 17:08:41,WARNING,user2,8.8.8.8,Posible anomalia detectada desde la IP 8.8.8.8
