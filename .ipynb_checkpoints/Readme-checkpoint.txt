@@ -1,21 +1,13 @@
-pip install pyspark
+- Ejecutar el Requirements.txt
 
-//Hay que tener docker instalado
-//Para que docker vaya bien hay que actualizar tu Linux en windows
-wsl --version
-wsl.exe --update
+- Instalar Jupyter Notebook
 
-docker pull confluentinc/cp-kafka
-docker pull zookeeper
+- Desplazarte hasta la carpeta donde esté el clone del repositorio desde el menú de Jupyter
 
-docker run -d --name zookeeper -p 2181:2181 zookeeper
-docker run -d --name kafka -p 9093:9093 --link zookeeper:zookeeper -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9093 -e KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT -e KAFKA_LISTENER_PORT=9093 -e KAFKA_LISTENER_NAME=PLAINTEXT confluentinc/cp-kafka
+- Ejecutar SIEM-SparkGenerator
 
-docker ps
+- Ejecutar SIEM-SparkConsumer
 
-pip install kafka-python
-
-// Prueba de que si funciona: docker exec -it kafka kafka-console-producer --topic mi-tema --bootstrap-server localhost:9093
-
+- Ir a consola de comandos y ejecutar el siguiente comando desde una vez estés dentro de la carpeta del repositorio: streamlit run dashboard.py 
 
 
