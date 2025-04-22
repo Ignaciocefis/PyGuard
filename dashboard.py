@@ -2,10 +2,8 @@ import streamlit as st
 import os
 import time
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, desc, hour, to_timestamp, window, countDistinct, when, avg, lag, unix_timestamp
+from pyspark.sql.functions import col, countDistinct, hour, avg, desc, unix_timestamp, lag, window, count, collect_list, array_contains, to_timestamp
 from pyspark.sql.window import Window
-import pandas as pd
-import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="SIEM Dashboard", layout="wide")
 
@@ -16,8 +14,8 @@ REFRESH_INTERVAL = 5  # segundos
 # Inicialización de Spark
 # -------------------------------
 
-@st.cache_resource
 # Crea e inicializa una sesión de Spark
+@st.cache_resource
 def get_spark_session():
     return (
         SparkSession.builder
@@ -33,8 +31,6 @@ def get_spark_session():
     )
 
 # Carga los datos desde un archivo CSV si existe
-# Convierte la columna timestamp a formato de fecha y hora
-
 def load_spark_data(_spark):
     if os.path.exists(LOG_FILE):
         df = _spark.read.option("header", True).csv(LOG_FILE)
@@ -46,71 +42,55 @@ def load_spark_data(_spark):
 # Funciones de análisis SIEM
 # -------------------------------
 
-# Cuenta el número de usuarios únicos
-
+# 1. Número de usuarios únicos que han generado eventos
 def count_unique_users(df):
     return df.select("user").distinct().count()
 
-# Detecta usuarios con una cantidad de eventos inusualmente alta
-
-def detect_anomalous_users(df):
-    return df.groupBy("user").count().filter(col("count") > 100)
-
-# Agrupa los eventos por hora y los cuenta
-
+# 2. Distribución del número de eventos por hora del día
 def analyze_time_distribution(df):
     return df.withColumn("hour", hour("timestamp")) \
              .groupBy("hour").count().orderBy("hour")
 
-# Detecta patrones marcados como 'suspicious'
+# 3. Detección de usuarios con una media elevada de eventos por hora (mayor a 20)
+def detect_user_activity_anomalies(df):
+    hourly = df.groupBy("user", hour("timestamp").alias("hour")).count()
+    return hourly.groupBy("user").agg(avg("count").alias("avg_events_per_hour")) \
+                 .filter(col("avg_events_per_hour") > 20)
 
-def detect_suspicious_patterns(df):
-    return df.filter(col("event_type") == "suspicious").groupBy("user").count()
-
-# Agrupa fallos de login y errores por usuario
-
+# 4. Número total de errores y fallos de login por usuario
 def correlate_failed_logins_errors(df):
-    return df.filter((col("event_type") == "failed_login") | (col("event_type") == "error")) \
+    return df.filter(col("event_type").isin("ERROR", "LOGIN_FAILURE")) \
              .groupBy("user").count().orderBy(desc("count"))
 
-# Detecta IPs internas peligrosas por frecuencia
-
-def detect_dangerous_ips(df):
-    return df.filter(col("ip").startswith("192.168")).groupBy("ip").count().orderBy(desc("count"))
-
-# Actividad general por IP
-
+# 5. Número total de errores y fallos de login por usuario
 def analyze_ip_activity(df):
     return df.groupBy("ip").count().orderBy(desc("count"))
 
-# Detecta combinaciones de IP y usuario con múltiples fallos de login
+# 6. Detección de IPs con alta actividad o accedidas por múltiples usuarios
+def detect_ip(df):
+    return df.filter(col("ip").rlike("^(192\\.168|172\\.16)")) \
+             .groupBy("ip").agg(count("*").alias("event_count"), countDistinct("user").alias("unique_users")) \
+             .filter((col("event_count") > 50) | (col("unique_users") > 3))
 
+# 7. Detección de combinaciones IP-usuario con múltiples intentos de acceso fallidos (más de 10)
 def detect_potential_attacks(df):
-    return df.filter((col("event_type") == "failed_login") & (col("ip").isNotNull())) \
+    return df.filter((col("event_type") == "LOGIN_FAILURE") & (col("ip").isNotNull())) \
              .groupBy("ip", "user").count().filter(col("count") > 10)
 
-# Detecta usuarios con aumentos de actividad inusuales por hora
-
-def detect_user_behavior_change(df):
-    return df.groupBy("user", hour("timestamp").alias("hour")).count() \
-             .groupBy("user").agg(avg("count").alias("avg_events_per_hour")) \
-             .filter(col("avg_events_per_hour") > 20)
-
-# Detecta picos de eventos de un tipo en intervalos de 1 minuto
-
+# 8. Detección de picos de eventos por tipo en intervalos de 1 minuto (más de 50 eventos)
 def detect_event_type_spikes(df):
-    return df.groupBy(window("timestamp", "1 minute"), "event_type").count() \
-             .filter(col("count") > 50).orderBy(desc("count"))
+    spikes = df.groupBy(window("timestamp", "1 minute"), "event_type").count().filter(col("count") > 50).orderBy(desc("count"))
+    return spikes.select("event_type", "count", "window.start", "window.end")
 
-# IPs usadas por múltiples usuarios (posibles accesos compartidos o ataques)
+# 9. Detección de IPs utilizadas por múltiples usuarios y usuarios que acceden desde muchas IPs distintas.
+def detect_shared_or_suspicious_ips(df):
+    ip_multiple_users = df.groupBy("ip").agg(countDistinct("user").alias("user_count")) \
+             .filter(col("user_count") > 3)
+    user_multiple_ips = df.groupBy("user").agg(countDistinct("ip").alias("ip_count")) \
+             .filter(col("ip_count") > 5)
+    return ip_multiple_users.join(user_multiple_ips, how="outer")
 
-def detect_unusual_ip_usage(df):
-    return df.groupBy("user", "ip").count().filter(col("count") > 5) \
-             .groupBy("ip").agg(countDistinct("user").alias("unique_users")) \
-             .filter(col("unique_users") > 3).orderBy(desc("unique_users"))
-
-# Tiempo promedio entre eventos por usuario (puede revelar automatización o bots)
-
+# 10. Tiempo promedio entre eventos por usuario
 def average_time_between_events(df):
     window_spec = Window.partitionBy("user").orderBy("timestamp")
     df_with_lag = df.withColumn("prev_timestamp", lag("timestamp").over(window_spec))
@@ -119,21 +99,50 @@ def average_time_between_events(df):
     return df_with_diff.groupBy("user").agg(avg("time_diff").alias("avg_seconds_between_events")) \
                        .filter(col("avg_seconds_between_events").isNotNull())
 
-# Detecta usuarios con errores consecutivos sin actividad normal intermedia
+# 11. Detección de posibles ataques de fuerza bruta desde IPs con más de 10 intentos de login fallido en 2 minutos
+def detect_brute_force(df):
+    failed_logins = df.filter(col("event_type") == "LOGIN_FAILURE")
+    brute_force = failed_logins.groupBy(window("timestamp", "2 minutes"), col("ip")) \
+             .count().filter(col("count") > 10).orderBy(desc("count"))
+    return brute_force.select("ip", "count", "window.start", "window.end")
 
-def detect_consecutive_errors(df):
-    window_spec = Window.partitionBy("user").orderBy("timestamp")
-    df_filtered = df.filter(col("event_type") == "ERROR")
-    df_with_lag = df_filtered.withColumn("prev_timestamp", lag("timestamp").over(window_spec))
-    df_with_gap = df_with_lag.withColumn("time_gap", 
-        unix_timestamp("timestamp") - unix_timestamp("prev_timestamp"))
-    return df_with_gap.filter(col("time_gap") < 60).groupBy("user").count().filter(col("count") > 3)
+# 12. Detección de usuarios que acceden desde más de 5 IPs distintas en un intervalo de 1 minuto
+def detect_network_scan(df):
+    user_ip_window = window("timestamp", "1 minute")
+    scan_df = df.groupBy("user", user_ip_window) \
+             .agg(countDistinct("ip").alias("distinct_ips")) \
+             .filter(col("distinct_ips") > 5) \
+             .orderBy(desc("distinct_ips"))
+    return scan_df.select("user", "distinct_ips", "window.start", "window.end")
+
+# 13. Detección de usuarios con más de 5 eventos fuera del horario habitual (antes de las 6h o después de las 22h)
+def detect_off_hours_activity(df):
+    return df.withColumn("hour", hour("timestamp")) \
+             .filter((col("hour") < 6) | (col("hour") >= 22)) \
+             .groupBy("user").count().filter(col("count") > 5)
+
+# 14. Número de tipos distintos de eventos generados por cada usuario (más de 4)
+def detect_event_type_diversity(df):
+    return df.groupBy("user").agg(countDistinct("event_type").alias("event_types")) \
+             .filter(col("event_types") > 4)
+
+# 15. Detección de usuarios con secuencias de eventos (ej. LOGIN → PERMISSION_CHANGE → FILE_DOWNLOAD)
+def detect_suspicious_event_chains(df):
+    sequence_df = df.filter(col("event_type").isin("LOGIN", "PERMISSION_CHANGE", "FILE_DOWNLOAD"))
+    return sequence_df.groupBy("user").agg(collect_list("event_type").alias("events")) \
+                      .filter(array_contains(col("events"), "LOGIN") & array_contains(col("events"), "FILE_DOWNLOAD"))
+
+# 16. Detección de eventos repetidos por usuario y tipo con más de 10 ocurrencias
+def detect_repetitive_behavior(df):
+    return df.groupBy("user", "event_type", "timestamp").count() \
+             .groupBy("user", "event_type").agg(count("*").alias("occurrences")) \
+             .filter(col("occurrences") > 10)
 
 # -------------------------------
 # Interfaz Streamlit + Spark
 # -------------------------------
 
-st.title("🔍 SIEM Dashboard en Tiempo Real con Spark")
+st.title("SIEM Dashboard con Spark")
 
 placeholder = st.empty()
 spark = get_spark_session()
@@ -143,126 +152,100 @@ while True:
         df_spark = load_spark_data(spark)
 
         if df_spark.count() == 0:
-            st.warning("⚠️ No hay datos disponibles.")
+            st.warning("No hay datos disponibles.")
             time.sleep(REFRESH_INTERVAL)
             continue
 
         df_pd = df_spark.toPandas()
 
         # Estadísticas Generales
-        st.subheader("📊 Estadísticas Generales")
+        st.subheader("Estadísticas Generales")
+        st.metric("Total de eventos", len(df_pd))
         col1, col2 = st.columns(2)
-
         with col1:
-            st.metric("Total de eventos", len(df_pd))
-
+            st.dataframe(df_pd.tail(10), use_container_width=True)
         with col2:
             event_counts = df_spark.groupBy("event_type").count().toPandas()
             event_counts = event_counts.set_index("event_type")
-            st.bar_chart(event_counts['count'], use_container_width=True)
+            st.bar_chart(event_counts)
 
-        # Picos Anómalos de Eventos por Tipo
-        st.subheader("🚨 Picos Anómalos de Eventos por Tipo")
-        df_event_spikes = detect_event_type_spikes(df_spark).toPandas()
-        if not df_event_spikes.empty:
-            st.line_chart(df_event_spikes.set_index('event_type')['count'], use_container_width=True)
-        else:
-            st.warning("⚠️ No se detectaron picos anómalos de eventos.")
-
-        # Usuarios con Cambios Inusuales en el Comportamiento
-        st.subheader("👥 Usuarios con Cambios Inusuales en el Comportamiento")
-        df_behavior_changes = detect_user_behavior_change(df_spark).toPandas()
-        if not df_behavior_changes.empty:
-            st.line_chart(df_behavior_changes.set_index('user')['avg_events_per_hour'], use_container_width=True)
-        else:
-            st.warning("⚠️ No se detectaron cambios inusuales en el comportamiento de los usuarios.")
-
-        # Distribución Temporal de Eventos
-        st.subheader("📅 Distribución Temporal de Eventos")
+        # Evolución temporal de eventos
+        st.subheader("Evolución temporal")
         df_time = (
             df_spark
-            .groupBy(window("timestamp", "1 minute"), "event_type")
+            .groupBy(window("timestamp", "10 seconds"), "event_type")
             .count()
             .toPandas()
         )
-
         if not df_time.empty:
             df_time['timestamp'] = df_time['window'].apply(lambda w: w.start)
             df_pivot = df_time.pivot(index='timestamp', columns='event_type', values='count').fillna(0)
-            st.line_chart(df_pivot, use_container_width=True)
-        else:
-            st.warning("⚠️ No hay eventos para mostrar en la distribución temporal.")
+            st.line_chart(df_pivot)
 
-        # Mostrar usuarios anómalos y errores de login fallidos en la misma fila
-        st.subheader("🚨 Usuarios Anómalos y Errores de Login Fallidos")
+        # Resultados del análisis SIEM
+        st.subheader("Análisis SIEM")
+        
+        count_unique_users_result = count_unique_users(df_spark)
+        st.metric("1. Número de usuarios únicos que han generado eventos:", count_unique_users_result)
 
-        # Crear dos columnas para mostrar los gráficos juntos
-        col1, col2 = st.columns(2)
+        analyze_time_distribution_result = analyze_time_distribution(df_spark)
+        st.write("2. Distribución del número de eventos por hora:")
+        st.line_chart(analyze_time_distribution_result.toPandas().set_index("hour"))
 
-        # Gráfico de Usuarios Anómalos
-        with col1:
-            anomalous_users = detect_anomalous_users(df_spark).toPandas()
-            if not anomalous_users.empty:
-                st.bar_chart(anomalous_users.set_index('user')['count'], use_container_width=True)
-            else:
-                st.warning("⚠️ No se detectaron usuarios anómalos.")
+        detect_user_activity_anomalies_result = detect_user_activity_anomalies(df_spark)
+        st.write("3. Detección de usuarios con una media elevada de eventos por hora (mayor a 20):")
+        st.bar_chart(detect_user_activity_anomalies_result.toPandas().set_index("user"))
 
-        # Gráfico de Errores de Login Fallidos
-        with col2:
-            failed_logins = correlate_failed_logins_errors(df_spark).toPandas()
-            if not failed_logins.empty:
-                st.bar_chart(failed_logins.set_index('user')['count'], use_container_width=True)
-            else:
-                st.warning("⚠️ No se detectaron fallos de login.")
+        failed_logins_errors_result = correlate_failed_logins_errors(df_spark)
+        st.write("4. Número total de errores y fallos de login por usuario:")
+        st.bar_chart(failed_logins_errors_result.toPandas().set_index("user"))
 
-        # IPs Peligrosas
-        st.subheader("⚠️ IPs Peligrosas")
-        dangerous_ips = detect_dangerous_ips(df_spark).toPandas()
-        if not dangerous_ips.empty:
-            st.bar_chart(dangerous_ips.set_index('ip')['count'], use_container_width=True)
-        else:
-            st.warning("⚠️ No se detectaron IPs peligrosas.")
+        analyze_ip_activity_result = analyze_ip_activity(df_spark)
+        st.write("5. Número total de errores y fallos de login por usuario:")
+        st.bar_chart(analyze_ip_activity_result.toPandas().set_index("ip"))
 
-        # Actividad por IP
-        st.subheader("🌐 Actividad por IP")
-        ip_activity = analyze_ip_activity(df_spark).toPandas()
-        if not ip_activity.empty:
-            st.bar_chart(ip_activity.set_index('ip')['count'], use_container_width=True)
-        else:
-            st.warning("⚠️ No se detectó actividad sospechosa por IP.")
+        detect_ip_result = detect_ip(df_spark)
+        st.write("6. Detección de IPs internas con alta actividad o accedidas por múltiples usuarios:")
+        st.dataframe(detect_ip_result.toPandas(), use_container_width=True)
 
-        # Posibles Ataques Detectados
-        st.subheader("🚨 Posibles Ataques Detectados")
-        potential_attacks = detect_potential_attacks(df_spark).toPandas()
-        if not potential_attacks.empty:
-            st.bar_chart(potential_attacks.set_index('ip')['count'], use_container_width=True)
-        else:
-            st.warning("⚠️ No se detectaron posibles ataques.")
+        detect_potential_attacks_result = detect_potential_attacks(df_spark)
+        st.write("7. Detección de combinaciones IP-usuario con múltiples intentos de acceso fallidos (más de 10):")
+        st.dataframe(detect_potential_attacks_result.toPandas(), use_container_width=True)
 
-        # IPs Utilizadas por Múltiples Usuarios
-        st.subheader("🔐 IPs Utilizadas por Múltiples Usuarios (Posibles Ataques)")
-        unusual_ip_usage = detect_unusual_ip_usage(df_spark).toPandas()
-        if not unusual_ip_usage.empty:
-            st.bar_chart(unusual_ip_usage.set_index('ip')['unique_users'], use_container_width=True)
-        else:
-            st.warning("⚠️ No se detectaron IPs compartidas entre múltiples usuarios.")
+        detect_event_type_spikes_result = detect_event_type_spikes(df_spark)
+        st.write("8. Detección de picos de eventos por tipo en intervalo de 1 minuto (más de 50 eventos):")  
+        st.dataframe(detect_event_type_spikes_result.toPandas(), use_container_width=True)
 
-        # Tiempo Promedio Entre Eventos por Usuario
-        st.subheader("⏳ Tiempo Promedio Entre Eventos por Usuario")
-        avg_time_events = average_time_between_events(df_spark).toPandas()
-        if not avg_time_events.empty:
-            st.bar_chart(avg_time_events.set_index('user')['avg_seconds_between_events'], use_container_width=True)
-        else:
-            st.warning("⚠️ No se detectaron anomalías en los tiempos entre eventos.")
+        detect_shared_or_suspicious_ips_result = detect_shared_or_suspicious_ips(df_spark)
+        st.write("9. Detección de IPs utilizadas por múltiples usuarios y usuarios que acceden desde muchas IPs distintas.:")
+        st.dataframe(detect_shared_or_suspicious_ips_result.toPandas(), use_container_width=True)
 
-        # Usuarios con Errores Consecutivos en Corto Periodo de Tiempo
-        st.subheader("⏱️ Usuarios con Errores Consecutivos en Corto Periodo de Tiempo")
-        consecutive_errors = detect_consecutive_errors(df_spark).toPandas()
-        if not consecutive_errors.empty:
-            st.bar_chart(consecutive_errors.set_index('user')['count'], use_container_width=True)
-        else:
-            st.warning("⚠️ No se detectaron errores consecutivos.")
+        average_time_between_events_result = average_time_between_events(df_spark)
+        st.write("10. Tiempo promedio entre eventos por usuario:")
+        st.bar_chart(average_time_between_events_result.toPandas().set_index("user"))
+
+        detect_brute_force_result = detect_brute_force(df_spark)
+        st.write("11. Detección de posibles ataques de fuerza bruta desde IPs con más de 10 intentos de acceso fallido en 2 minutos:")
+        st.dataframe(detect_brute_force_result.toPandas(), use_container_width=True)
+
+        detect_network_scan_result = detect_network_scan(df_spark)
+        st.write("12. Detección de usuarios que acceden desde más de 5 IPs distintas en un intervalo de 1 minuto:")
+        st.dataframe(detect_network_scan_result.toPandas(), use_container_width=True)
+
+        detect_off_hours_activity_result = detect_off_hours_activity(df_spark)
+        st.write("13. Detección de usuarios con más de 5 eventos fuera del horario habitual (antes de las 6h o después de las 22h):")
+        st.dataframe(detect_off_hours_activity_result.toPandas(), use_container_width=True)
+
+        detect_event_type_diversity_result = detect_event_type_diversity(df_spark)
+        st.write("14. Número de tipos distintos de eventos generados por cada usuario (más de 4):")
+        st.bar_chart(detect_event_type_diversity_result.toPandas().set_index("user"))
+
+        detect_suspicious_event_chains_result = detect_suspicious_event_chains(df_spark)
+        st.write("15. Detección de usuarios con secuencias de eventos (LOGIN → PERMISSION_CHANGE → FILE_DOWNLOAD):")
+        st.dataframe(detect_suspicious_event_chains_result.toPandas(), use_container_width=True)
+
+        detect_repetitive_behavior_result = detect_repetitive_behavior(df_spark)
+        st.write("16. Detección de eventos repetidos por usuario y tipo con más de 10 ocurrencias:")
+        st.dataframe(detect_repetitive_behavior_result.toPandas(), use_container_width=True)
 
     time.sleep(REFRESH_INTERVAL)
-
-
