@@ -1,5 +1,5 @@
 
-# SIEM PySpark
+# PyGuard
 
 Este proyecto implementa un sistema de gestión de eventos e información de seguridad utilizando Apache Spark y PySpark, integrando dashboards para visualización de datos en tiempo real.
 
