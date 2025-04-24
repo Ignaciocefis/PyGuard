@@ -5,7 +5,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, countDistinct, hour, avg, desc, unix_timestamp, lag, window, count, collect_list, array_contains, to_timestamp
 from pyspark.sql.window import Window
 
-st.set_page_config(page_title="SIEM Dashboard", layout="wide")
+st.set_page_config(page_title="PyGuard - SIEM Dashboard", layout="wide")
 
 LOG_FILE = 'logs/kafka_logs.csv'
 REFRESH_INTERVAL = 5  # segundos
@@ -182,7 +182,7 @@ while True:
             df_pivot = df_time.pivot(index='timestamp', columns='event_type', values='count').fillna(0)
             st.line_chart(df_pivot)
 
-        # Resultados del análisis SIEM
+        # Resultados del análisis
         st.subheader("Análisis SIEM")
         
         count_unique_users_result = count_unique_users(df_spark)

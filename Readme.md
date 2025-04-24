@@ -1,5 +1,5 @@
 
-# SIEM PySpark
+# PyGuard
 
 Este proyecto implementa un sistema de gestión de eventos e información de seguridad utilizando Apache Spark y PySpark, integrando dashboards para visualización de datos en tiempo real.
 
@@ -55,16 +55,16 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado lo siguiente:
      ```
    - Navega a la carpeta donde se encuentra el repositorio clonado.
 
-2. **Ejecutar `SIEM-SparkGenerator`:**
-   - En el notebook `SIEM-SparkGenerator.ipynb`, ejecuta todas las celdas necesarias para generar los datos de eventos.
+2. **Ejecutar `PyGuard-SparkGenerator`:**
+   - En el notebook `pyGuard-SparkGenerator.ipynb`, ejecuta todas las celdas necesarias para generar los datos de eventos.
 
-3. **Ejecutar `SIEM-SparkConsumer`:**
-   - En el notebook `SIEM-SparkConsumer.ipynb`, ejecuta todas las celdas para consumir y procesar los datos generados por el paso anterior.
+3. **Ejecutar `PyGuard-SparkConsumer`:**
+   - En el notebook `pyGuard-SparkConsumer.ipynb`, ejecuta todas las celdas para consumir y procesar los datos generados por el paso anterior.
 
 4. **Iniciar Streamlit:**
    - Abre la consola de comandos, navega hasta la carpeta del repositorio y ejecuta el siguiente comando para visualizar el dashboard:
      ```bash
-     streamlit run dashboard.py
+     streamlit run pyGuard-Dashboard.py
      ```
 
 ¡Listo! Ahora puedes ver los resultados en tiempo real a través del dashboard.
